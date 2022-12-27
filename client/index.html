@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Local Wildlife Tracker</title>
+</head>
+<body>
+    <h1>Local Wildlife Tracker</h1>
+    <div id="map"></div>
+
+    <div class="modal" id="modal">
+            <form>
+                <div class="modal-header"> 
+                    <button data-close-button class="close-button">&times;</button> <br>
+                </div>
+                <label for="wildlife-name">Wildlife Name:</label>
+                <input type="text" id="wildlife-name" name="wildlife-name"><br>
+                
+                <br>
+                <label for="wildlife-picture">Wildlife Picture:</label><br>
+                <input type="file" id="wildlife-picture" name="wildlife-picture"><br>
+                <br>
+                <label for="wildlife-notes">Notes:</label><br>
+                <input type="text" id="wildlife-notes" name="wildlife-notes"><br>
+                <br>
+                <label for="date-time">Date/Time:</label><br>
+                <input type="datetime-local" id="date-time" name="date-time"><br>
+                <br>
+                <input type="submit" value="Submit">
+              </form> 
+
+        </div>
+    <div  id="overlay"></div>
+
+    <script>
+        function initMap(){
+            let houston = { lat:29.7604 , lng:-95.3698 };
+            var options = {
+                zoom: 10,
+                center: houston
+            }
+
+            var map = new google.maps.Map(document.getElementById('map'), options);
+
+            new google.maps.Marker({
+            position: houston,
+            map: map, 
+            draggable: true,
+            animation: google.maps.Animation.DROP
+
+            
+
+        })
+
+        var modal = document.getElementById('modal');
+    
+        function openModal() {
+            if (modal == null) return
+            modal.classList.add('active')
+            overlay.classList.add('active')
+        }
+
+        google.maps.event.addListener(map, "click", (event) => {
+    addMarker(event.latLng, map);
+        });
+        
+       function addMarker(location, map) {
+        var marker = new google.maps.Marker({
+                position: location, 
+                map: map,
+                animation: google.maps.Animation.DROP
+
+            });
+
+            marker.addListener("click", () => {
+           openModal()
+            })
+
+    //         google.maps.event.addListener(marker, 'click', function() {
+    //   $('#modal').modal('show');
+    // });
+        };
+        //  var marker = new google.maps.Marker({
+        //     position: {lat:29.59486963307102, lng: -95.36708016874947},
+        //     map: map,
+        //     title: 'click me',
+        //     animation: google.maps.Animation.DROP,
+
+        //  });
+
+        //  google.maps.event.addListener(marker,'click', function() {
+
+        //     var form = document.createElement("form");
+        //     form.setAttribute("method","post");
+        //     form.setAttribute("action","/some_page.php");
+
+        //     var input = document.createElement("input");
+        //     input.setAttribute("type","text");
+        //     input.setAttribute("name","name");
+        //     input.setAttribute("placeholder","enter your name here");
+        //     form.appendChild(input);
+
+        //     var button = document.createElement("button");
+        //     button.innerHTML = "SUBMIT";
+        //     form.appendChild(button);
+
+        //     document.body.appendChild(form);
+        //  })
+
+        };
+
+      
+    </script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4ewBp46WBi42fwNeHxopRpmoGD2uZcTk&callback=initMap">
+</script>
+</body>
+</html>
