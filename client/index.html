@@ -12,7 +12,7 @@
     <div id="map"></div>
 
     <div class="modal" id="modal">
-            <form>
+            <form id="dataEntryForm">
                 <div class="modal-header"> 
                     <button data-close-button class="close-button">&times;</button> <br>
                 </div>
@@ -29,93 +29,24 @@
                 <label for="date-time">Date/Time:</label><br>
                 <input type="datetime-local" id="date-time" name="date-time"><br>
                 <br>
-                <input type="submit" value="Submit">
+                <input type="submit" id="submitBtn" value="Submit">
               </form> 
 
         </div>
+        <div>
+            <button id="remove-last-marker">Remove Last Marker</button>
+            <button id="hide-all-markers">Hide All Markers</button>
+            <button id="show-all-markers">Show All Markers</button>
+        </div>
     <div  id="overlay"></div>
 
-    <script>
-        function initMap(){
-            let houston = { lat:29.7604 , lng:-95.3698 };
-            var options = {
-                zoom: 10,
-                center: houston
-            }
-
-            var map = new google.maps.Map(document.getElementById('map'), options);
-
-            new google.maps.Marker({
-            position: houston,
-            map: map, 
-            draggable: true,
-            animation: google.maps.Animation.DROP
-
-            
-
-        })
-
-        var modal = document.getElementById('modal');
-    
-        function openModal() {
-            if (modal == null) return
-            modal.classList.add('active')
-            overlay.classList.add('active')
-        }
-
-        google.maps.event.addListener(map, "click", (event) => {
-    addMarker(event.latLng, map);
-        });
-        
-       function addMarker(location, map) {
-        var marker = new google.maps.Marker({
-                position: location, 
-                map: map,
-                animation: google.maps.Animation.DROP
-
-            });
-
-            marker.addListener("click", () => {
-           openModal()
-            })
-
-    //         google.maps.event.addListener(marker, 'click', function() {
-    //   $('#modal').modal('show');
-    // });
-        };
-        //  var marker = new google.maps.Marker({
-        //     position: {lat:29.59486963307102, lng: -95.36708016874947},
-        //     map: map,
-        //     title: 'click me',
-        //     animation: google.maps.Animation.DROP,
-
-        //  });
-
-        //  google.maps.event.addListener(marker,'click', function() {
-
-        //     var form = document.createElement("form");
-        //     form.setAttribute("method","post");
-        //     form.setAttribute("action","/some_page.php");
-
-        //     var input = document.createElement("input");
-        //     input.setAttribute("type","text");
-        //     input.setAttribute("name","name");
-        //     input.setAttribute("placeholder","enter your name here");
-        //     form.appendChild(input);
-
-        //     var button = document.createElement("button");
-        //     button.innerHTML = "SUBMIT";
-        //     form.appendChild(button);
-
-        //     document.body.appendChild(form);
-        //  })
-
-        };
-
-      
-    </script>
     <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4ewBp46WBi42fwNeHxopRpmoGD2uZcTk&callback=initMap">
+
 </script>
+<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+<script src = "main.js"></script>
+<script src = "dataForm.js"></script>
+
 </body>
 </html>

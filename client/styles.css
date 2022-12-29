@@ -35,7 +35,7 @@ h1 {
     display:flex;
 }
 
-.modal-body .close-button {
+.modal-header .close-button {
     cursor: pointer;
     border: none;
     outline: none;
