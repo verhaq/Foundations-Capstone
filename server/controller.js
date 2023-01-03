@@ -30,7 +30,7 @@ module.exports = {
             wildlife_name varchar(50),
             wildlife_picture varchar,
             notes text,
-            date timestamp
+            date date
         );`)
         .then(() => {
             console.log('DB seeded!')
@@ -53,10 +53,7 @@ module.exports = {
     updateMarker: (req,res) => {
         const {wName, wPic, wNotes, wDate, marker_id} = req.body
         console.log(req.body)
-        sequelize.query(`
-        update markers
-        set wildlife_name = '${wName}', wildlife_picture = '${wPic}', notes = '${wNotes}', date = ${wDate} 
-        WHERE marker_id = ${marker_id}; `)
+        sequelize.query(`update markers set wildlife_name = '${wName}', wildlife_picture = '${wPic}', notes = '${wNotes}', date = '${wDate}' WHERE marker_id = ${marker_id}; `)
         .then((dbRes) => res.status(200).send(dbRes)).catch((err) => console.log(err));
 
     },

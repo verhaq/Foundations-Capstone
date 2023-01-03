@@ -44,6 +44,25 @@ h1 {
     font-weight: bold;
 }
 
+#hide-all-markers {
+    margin-left: 750px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #45a049;
+    color: white;
+    cursor: pointer;
+}
+#show-all-markers {
+    margin-left: 750px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #45a049;
+    color: white;
+    cursor: pointer;
+}
+
 #overlay {
     position: fixed;
     opacity: 0 ;

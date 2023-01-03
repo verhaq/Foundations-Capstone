@@ -40,11 +40,11 @@
                 <label for="wildlife-notes">Notes:</label><br>
                 <input type="text" id="wildlife-notes" name="wildlife-notes"><br>
                 <br>
-                <label for="date-time">Date/Time:</label><br>
-                <input type="datetime-local" id="date-time" name="date-time"><br>
+                <label for="date-time">Date:</label><br>
+                <input type="date" id="date-time" name="date-time"><br>
                 <br>
-                <!-- <button type="submit" id="submitBtn">Submit</button> -->
-                <input type="submit" id = "submitBtn" value="Submit">
+                <button id="submitBtn">Submit</button>
+                <!-- <input type="submit" id = "submitBtn" value="Submit"> -->
               </form> 
               <!-- <section id="entries-container"></section> -->
         </div>
@@ -57,9 +57,8 @@
     </section>
 
     
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src = "main.js"></script>
-    <script src = "dataForm.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4ewBp46WBi42fwNeHxopRpmoGD2uZcTk&callback=initMap">
 </script>
@@ -67,7 +66,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
 <script type="text/javascript">
-VANTA.TOPOLOGY({
+    VANTA.TOPOLOGY({
   el: "#vanta-canvas",
   mouseControls: true,
   touchControls: true,
@@ -79,5 +78,6 @@ VANTA.TOPOLOGY({
 })
 </script>
 
+<script src = "dataForm.js"></script>
 </body>
 </html>

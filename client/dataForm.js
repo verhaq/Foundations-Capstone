@@ -5,12 +5,12 @@ const wNotes=document.querySelector('#wildlife-notes')
 const wDate=document.querySelector('#date-time')
 const form = document.querySelector('form')
 const entryList = document.querySelector('#entries-container')
-const marker_id = document.querySelector('#marker_id')
-
-let baseURL="http://localhost:5050"
 
 const sendForm =(e)=>{
+    console.log("hello")
     e.preventDefault();
+    console.log("bye")
+
 
 // const fd = new FormData(form);
 
@@ -20,15 +20,16 @@ let obj = {
     wName:wName.value,
     wPic:wPic.value,
     wNotes:wNotes.value,
-    wDate:wDate.value,
-    marker_id,
+    wDate:wDate.value.toString().split('T')[0],
+    marker_id:marker_id.innerHTML,
 }
+ console.log(obj)
     axios.put(`${baseURL}/update`, obj)
     .then(res => console.log(res.data))
     .catch(err => console.log('error in axios',err))
     
 }
-
+console.log(form)
  form.addEventListener('submit',sendForm)
 
     
