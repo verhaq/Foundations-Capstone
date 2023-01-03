@@ -7,7 +7,7 @@ h1 {
 }
 #map {
     height: 80%;
-    width: 90%;
+    width: 60%;
     margin: auto;
 }
 
@@ -77,7 +77,6 @@ form {
   }
   
   input[type="text"],
-  input[type="file"],
   input[type="datetime-local"] {
     width: 75%;
     padding: 12px 20px;
@@ -86,8 +85,8 @@ form {
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-  
-  input[type="submit"] {
+
+#submitBtn[type="submit"] {
     width: 50%;
     background-color: #4CAF50;
     color: white;
@@ -98,6 +97,6 @@ form {
     cursor: pointer;
   }
   
-  input[type="submit"]:hover {
+  #submitBtn[type="submit"]:hover {
     background-color: #45a049;
   }

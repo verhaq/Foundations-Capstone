@@ -3,6 +3,10 @@ const overlay =  document.getElementById('overlay')
 const RemoveMarkerBtn = document.getElementById('remove-last-marker')
 const HideMarkerBtn = document.getElementById('hide-all-markers')
 const ShowMarkerBtn = document.getElementById('show-all-markers')
+const marker_id = document.getElementById('marker_id')
+const baseURL="http://localhost:5050"
+const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let labelIndex = 0;
 
 
 
@@ -37,33 +41,38 @@ function openModal() {
 
 google.maps.event.addListener(map, "click", (event) => {
     addMarker(event.latLng, map);
+    
 });
 
 var markers = [];
-function addMarker(location, map) {
+async function addMarker(location, map) {
+   const dbRes = await axios.post(`${baseURL}/add`)
+    console.log(dbRes.data.marker_id)
     var marker = new google.maps.Marker({
         position: location, 
         map: map,
-        animation: google.maps.Animation.DROP
-        
+        animation: google.maps.Animation.DROP,
+        label:  dbRes.data.marker_id.toString(),
     });
     markers.push(marker)
 
     
     
     
-    marker.addListener("click", () => {
+    marker.addListener("click", (e) => {
+        console.log(marker)
+        marker_id.innerHTML = marker.label
         openModal()
     })
     
-    function removeLastMarker() {
-        if (markers.length > 0) {
-            var lastMarker = markers[markers.length - 1];
-            lastMarker.setMap(null);
-            markers.pop()
-        }
-    }
-    RemoveMarkerBtn.addEventListener('click', removeLastMarker);
+    // function removeLastMarker() {
+    //     if (markers.length > 0) {
+    //         var lastMarker = markers[markers.length - 1];
+    //         lastMarker.setMap(null);
+    //         markers.pop()
+    //     }
+    // }
+    // RemoveMarkerBtn.addEventListener('click', removeLastMarker);
 
     function setMapOnAll(map) {
         for (let i = 0; i < markers.length; i++) {
@@ -97,8 +106,7 @@ function closeModal(modal) {
     overlay.classList.remove('active');
       }
 
-//NOT WORKING
-// closeModalButtons.addEventListener('click', closeModal(modal))
+// closeModalButtons.addEventListener('click', closeModal)
 
         
         
