@@ -25,8 +25,11 @@ module.exports = {
     },
     seed: (req, res) => {
         sequelize.query(`
+        drop table markers;
         create table markers(
             marker_id serial primary key,
+            lat text,
+            lng text,
             wildlife_name varchar(50),
             wildlife_picture varchar,
             notes text,
@@ -40,9 +43,11 @@ module.exports = {
     },
 
     addMarker: (req,res) => {
-        const {marker_label} = req.body
+        const { location} = req.body
+        console.log(location)
+        const {lat,lng} = location
         sequelize.query(`
-        insert into markers values(DEFAULT)`)
+        insert into markers (lat,lng) values(${lat},${lng})`)
         sequelize.query(`
         SELECT * FROM markers ORDER BY marker_id DESC LIMIT 1`)
         .then((dbRes) => 
@@ -58,7 +63,7 @@ module.exports = {
 
     },
     getEntries: (req, res) => {
-        sequelize.query(` SELECT * FROM data_entry`)
+        sequelize.query(` SELECT * FROM markers`)
         .then((dbRes) => {
             res.status(200).send(dbRes[0])
          })

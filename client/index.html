@@ -10,8 +10,8 @@
     <title>Local Wildlife Tracker</title>
 </head>
 <body>
-    <section id="vanta-canvas">
-
+    <sectio id="vanta-canvas">
+    <div id="loadingText" class="loadingText">...loading</div>
  <nav>
     <div class="navbar">
         <img src="./cam.png" alt="cam" class="cam"> 
@@ -22,7 +22,7 @@
       </div>
     </nav>
     <div id="map"></div>
-
+    
     <div class="modal" id="modal">
         <!-- <div class="modal-header"> 
             <button data-close-button class="close-button">&times;</button> <br>
@@ -50,9 +50,11 @@
         </div>
         <div>
             <!-- <button id="remove-last-marker">Remove Last Marker</button> -->
+            <button id="display">Display Entries</button>
             <button id="hide-all-markers">Hide All Markers</button>
             <button id="show-all-markers">Show All Markers</button>
         </div>
+        <div id="formContainer"></div>
     <div  id="overlay"></div>
     </section>
 

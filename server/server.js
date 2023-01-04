@@ -12,7 +12,7 @@ app.use(express.json())
 app.post('/seed', seed)
 ///have to make the axios call first then this will work
 app.post('/add', addMarker)
-app.get('/add', getEntries)
+app.get('/get', getEntries)
 app.put('/update', updateMarker)
 
 //landing page

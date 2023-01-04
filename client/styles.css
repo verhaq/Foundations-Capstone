@@ -10,6 +10,23 @@ h1 {
     width: 60%;
     margin: auto;
 }
+.loadingText {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    /* border: 1px solid black; */
+    /* border-radius: 10px; */
+    z-index: 10;
+    text-align: center;
+    /* background-color: white; */
+    width: 500px;
+    max-width: 100%;
+}
+.loadingText.active {
+    transform: translate(-50%, -50%) scale(1);
+}
 
 .modal {
     position: fixed;
@@ -23,8 +40,6 @@ h1 {
     background-color: white;
     width: 500px;
     max-width: 100%;
-
-
 }
 
 .modal.active {
@@ -45,7 +60,7 @@ h1 {
 }
 
 #hide-all-markers {
-    margin-left: 750px;
+    margin-left: 50px;
     margin-top: 10px;
     padding: 10px;
     border-radius: 10px;
@@ -54,7 +69,17 @@ h1 {
     cursor: pointer;
 }
 #show-all-markers {
-    margin-left: 750px;
+    margin-left: 50px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #45a049;
+    color: white;
+    cursor: pointer;
+}
+
+#display {
+    margin-left: 500px;
     margin-top: 10px;
     padding: 10px;
     border-radius: 10px;
@@ -119,3 +144,15 @@ form {
   #submitBtn[type="submit"]:hover {
     background-color: #45a049;
   }
+
+  #formContainer {
+    background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 300px;
+  margin: 20px auto;
+
+  /* Add some padding */
+  padding: 20px;
+}

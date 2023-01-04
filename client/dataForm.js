@@ -1,10 +1,11 @@
-// let axios = require('axios');
 const wName=document.querySelector('#wildlifeName') 
 const wPic=document.querySelector('#wildlife-picture')
 const wNotes=document.querySelector('#wildlife-notes')
 const wDate=document.querySelector('#date-time')
 const form = document.querySelector('form')
 const entryList = document.querySelector('#entries-container')
+const formContainer = document.querySelector('#formContainer')
+const displayBtn = document.querySelector('#display')
 
 const sendForm =(e)=>{
     console.log("hello")
@@ -25,15 +26,41 @@ let obj = {
 }
  console.log(obj)
     axios.put(`${baseURL}/update`, obj)
-    .then(res => console.log(res.data))
+    .then(res => { alert("Form successfully submitted!"); console.log(res.data)})
     .catch(err => console.log('error in axios',err))
+
     
 }
 console.log(form)
  form.addEventListener('submit',sendForm)
 
+
+
+const displayForm = (e) => {
+    e.preventDefault()
+    axios.get(`${baseURL}/add`)
+    .then(res => {
+        formContainer.innerHTML=''
+        let entry=res.data
+        console.log(entry)
+        const formDiv = document.createElement('div')
+        formDiv.innerHTML=(`<div>${entry}</div>`)
+        formContainer.appendChild(formDiv)
+        return entry;
+
+    })
+}
+
+displayBtn.addEventListener("click", displayForm)
+
+
+
+
+
+
+
     
-// function createEntryCard(animal) {
+// function createEntryCard() {
 //     const EntryCard = document.createElement('div')
 //     EntryCard.classList.add('entry-card')
 
@@ -50,8 +77,6 @@ console.log(form)
 //         createEntryCard(arr[i])
 //     }
 // }
-
-// const getAllEntries = () => axios.get
 
 
 // function getEntries() {
@@ -74,5 +99,4 @@ console.log(form)
 
 // }
 
-// getEntries()
 
