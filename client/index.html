@@ -10,7 +10,7 @@
     <title>Local Wildlife Tracker</title>
 </head>
 <body>
-    <sectio id="vanta-canvas">
+    <section id="vanta-canvas">
     <div id="loadingText" class="loadingText">...loading</div>
  <nav>
     <div class="navbar">
@@ -31,6 +31,9 @@
                 <label for="markerId">Marker Id:</label>
                 <div   id="marker_id"></div><br>
 
+                <label for="markerId">Marker position:</label>
+                <div   id="marker_pos"></div><br>
+
                 <label for="wildlifeName">Wildlife Name:</label>
                 <input type="text" id="wildlifeName" name="wildlife-name"><br>
                 <br>
@@ -43,14 +46,14 @@
                 <label for="date-time">Date:</label><br>
                 <input type="date" id="date-time" name="date-time"><br>
                 <br>
-                <button id="submitBtn">Submit</button>
+                <button id="submitBtn" type="submit">Submit</button>
                 <!-- <input type="submit" id = "submitBtn" value="Submit"> -->
               </form> 
               <!-- <section id="entries-container"></section> -->
         </div>
         <div>
             <!-- <button id="remove-last-marker">Remove Last Marker</button> -->
-            <button id="display">Display Entries</button>
+            <!-- <button id="display">Display Entries</button> -->
             <button id="hide-all-markers">Hide All Markers</button>
             <button id="show-all-markers">Show All Markers</button>
         </div>

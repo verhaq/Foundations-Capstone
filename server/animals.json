@@ -1,0 +1,44 @@
+{
+    "animals": [
+      {
+        "name": "Giant panda",
+        "img": "https://i.natgeofe.com/k/75ac774d-e6c7-44fa-b787-d0e20742f797/giant-panda-eating_4x3.jpg"
+      },
+      {
+        "name": "Tiger",
+        "img": "https://images.pexels.com/photos/46251/sumatran-tiger-tiger-big-cat-stripes-46251.jpeg?cs=srgb&dl=pexels-pixabay-46251.jpg&fm=jpg"
+      },
+      {
+        "name": "Rhinoceros",
+        "img": "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQcQvVhrkqn45HDeT6Yt7Qui0PPOwXm6PeG-WzsBO1fvUeKlOUGdv35D3OTQ3G8FcxM"
+      },
+      {
+        "name": "Red panda",
+        "img": "https://i.natgeofe.com/k/63b1a8a7-0081-493e-8b53-81d01261ab5d/red-panda-full-body_16x9.jpg?w=1200"
+      },
+      {
+        "name": "Mountain gorilla",
+        "img": "https://cff2.earth.com/uploads/2022/03/11172447/Gorillas2-scaled.jpg"
+      },
+      {
+        "name": "Vaquita",
+        "img": "https://th-thumbnailer.cdn-si-edu.com/cYyG_bH5Mjc2tehD2_GrsVGHUeI=/fit-in/1600x0/filters:focal(600x331:601x332)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/5c/f3/5cf3e81a-c3dd-4c55-ad91-c4a7767b0612/phocoena_sinus.jpg"
+      },
+      {
+        "name": "Monarch Butterfly",
+        "img": "https://i.natgeofe.com/k/9acd2bad-fb0e-43a8-935d-ec0aefc60c2f/monarch-butterfly-grass_4x3.jpg"
+      },
+      {
+        "name": "Sei Whale",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Sei_whale_mother_and_calf_Christin_Khan_NOAA.jpg"
+      },
+      {
+        "name": "Eastern Lowland Gorilla",
+        "img": "https://www.edgeofexistence.org/wp-content/uploads/2017/06/Gorilla-beringei_shutterstock_221791831-1000x668.jpg"
+      },
+      {
+        "name": "Sumatran Elephant",
+        "img": "https://ichef.bbci.co.uk/images/ic/1200x675/p04vp682.jpg"
+      }
+    ]
+  }

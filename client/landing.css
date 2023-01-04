@@ -1,76 +1,82 @@
-body{
-    overflow: hidden;
+body {
+  overflow: hidden;
 }
 h1 {
-    text-align: center;
-    color: #ddd;
-    font-size: 35px;
+  text-align: center;
+  color: #ddd;
+  font-size: 35px;
 }
 
 p {
-    color: white;
-    text-align: center;
-    font-size: larger;
+  color: white;
+  text-align: center;
+  font-size: larger;
 }
 
 #animalContainer {
-  height: 100px;
-  width: 100px;
-  border: #ddd;
+  height: 100%;
+  width: 100%;
+  /* position: fixed; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  /* grid-template-columns: repeat(5, 100px);
+  grid-template-rows: repeat(5, 100px); */
 }
-
+.animalImg {
+  width: 300px;
+  height: 300px;
+}
 #randomAnimalBtn {
-    border-radius: 20px;
-    padding: 20px;
-    background-color: #4CAF50;
-    color: black;
-    margin-left: 75vh;
-    cursor: pointer;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #4caf50;
+  color: black;
+  margin-left: 75vh;
+  cursor: pointer;
 }
-
 
 .cam {
-    width: 30px;
-    height: 30px;
-    margin-top: 15px;
-    margin-left: 10px;
-    display: inline-block;
-    vertical-align: middle;
-  
-  }
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
 
-  #vanta-canvas {
-    width:100%;
-    height:100vh;
-  }
-  
-  div.text {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
-    margin-top: 15px;
-    color: #ddd;
-  }
-      .navbar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: rgba(24, 78, 8, 0.568);
-      }
-      .navbar a {
-        float: right;
-        color: white;
-        text-align: center;
-        padding:  20px;
-        text-decoration: none;
-        font-size: 17px;
-      }
-      .navbar a:hover {
-        background-color: #ddd;
-        color: black;
-      }
-      .navbar a.active {
-        background-color: #4CAF50;
-        color: white;
-      }
+#vanta-canvas {
+  width: 100%;
+  height: 100vh;
+}
+
+div.text {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-top: 15px;
+  color: #ddd;
+}
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(24, 78, 8, 0.568);
+}
+.navbar a {
+  float: right;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.navbar a.active {
+  background-color: #4caf50;
+  color: white;
+}

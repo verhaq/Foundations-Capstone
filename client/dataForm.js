@@ -1,57 +1,54 @@
-const wName=document.querySelector('#wildlifeName') 
-const wPic=document.querySelector('#wildlife-picture')
-const wNotes=document.querySelector('#wildlife-notes')
-const wDate=document.querySelector('#date-time')
+const wName = document.querySelector('#wildlifeName')
+const wPic = document.querySelector('#wildlife-picture')
+const wNotes = document.querySelector('#wildlife-notes')
+const wDate = document.querySelector('#date-time')
 const form = document.querySelector('form')
 const entryList = document.querySelector('#entries-container')
 const formContainer = document.querySelector('#formContainer')
 const displayBtn = document.querySelector('#display')
 
-const sendForm =(e)=>{
-    console.log("hello")
-    e.preventDefault();
-    console.log("bye")
+const sendForm = (e) => {
+  console.log('hello')
+  e.preventDefault()
+  console.log('bye')
 
+  // const fd = new FormData(form);
 
-// const fd = new FormData(form);
-
-// const obj = Object.fromEntries(fd);
-//     console.log(obj);
-let obj = {
-    wName:wName.value,
-    wPic:wPic.value,
-    wNotes:wNotes.value,
-    wDate:wDate.value.toString().split('T')[0],
-    marker_id:marker_id.innerHTML,
-}
- console.log(obj)
-    axios.put(`${baseURL}/update`, obj)
-    .then(res => { alert("Form successfully submitted!"); console.log(res.data)})
-    .catch(err => console.log('error in axios',err))
-
-    
+  // const obj = Object.fromEntries(fd);
+  //     console.log(obj);
+  let obj = {
+    wName: wName.value,
+    wPic: wPic.value,
+    wNotes: wNotes.value,
+    wDate: wDate.value.toString().split('T')[0],
+    marker_id: marker_id.innerHTML
+  }
+  console.log(obj)
+  axios
+    .put(`${baseURL}/update`, obj)
+    .then((res) => {
+      alert('Form successfully submitted!')
+      console.log(res.data)
+    })
+    .catch((err) => console.log('error in axios', err))
 }
 console.log(form)
- form.addEventListener('submit',sendForm)
-
-
+form.addEventListener('submit', sendForm)
 
 const displayForm = (e) => {
-    e.preventDefault()
-    axios.get(`${baseURL}/add`)
-    .then(res => {
-        formContainer.innerHTML=''
-        let entry=res.data
-        console.log(entry)
-        const formDiv = document.createElement('div')
-        formDiv.innerHTML=(`<div>${entry}</div>`)
-        formContainer.appendChild(formDiv)
-        return entry;
-
-    })
+  e.preventDefault()
+  axios.get(`${baseURL}/add`).then((res) => {
+    formContainer.innerHTML = ''
+    let entry = res.data
+    console.log(entry)
+    const formDiv = document.createElement('div')
+    formDiv.innerHTML = `<div>${entry}</div>`
+    formContainer.appendChild(formDiv)
+    return entry
+  })
 }
 
-displayBtn.addEventListener("click", displayForm)
+displayBtn.addEventListener('click', displayForm)
 
 
 

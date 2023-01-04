@@ -1,9 +1,8 @@
 require('dotenv').config()
-const express = require ('express')
+const express = require('express')
 const cors = require('cors')
-const {SERVER_PORT} = process.env
-const {addMarker, seed, getEntries, updateMarker, displayAnimal} = require('./controller')
-
+const { SERVER_PORT } = process.env
+const { addMarker, seed, getEntries, updateMarker, displayAnimal } = require('./controller')
 
 const app = express()
 app.use(cors())
@@ -17,6 +16,5 @@ app.put('/update', updateMarker)
 
 //landing page
 app.get('/api/animal', displayAnimal)
-
 
 app.listen(SERVER_PORT, () => console.log(`gliding on ${SERVER_PORT}`))
