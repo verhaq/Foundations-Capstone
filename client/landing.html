@@ -14,7 +14,7 @@
         <div class="navbar">
           <img src="./cam.png" alt="cam" class="cam" />
           <div class="text">Wildlife Tracker</div>
-          <a href="#">About</a>
+          <a href="./about.html">About</a>
           <a href="./index.html">Tracker</a>
           <a class="active" href="./landing.html">Home</a>
         </div>
@@ -25,18 +25,27 @@
         in information about your encounters to create a log of your discoveries!
       </p>
       <br />
-      <p>Before you move on, click the button below to reveal an endangered species according to the IUCN Red List.</p>
+      <div id="why">
+      <p> Why track wildlife? </p>
+      <ul>
+        <li>Conservation efforts</li>
+        <li>Track invasive species</li>
+        <li>Protect your pets</li>
+        <li>Just for fun!</li>
+      </ul>
+    </div>
+      <p>Before you move on, click the button below to reveal a list of 5 endangered species according to the IUCN Red List.</p>
       <button id="randomAnimalBtn">Get Random Endangered Species</button>
       <div id="animalContainer"></div>
     </section>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
-    <script type="text/javascript">
-      VANTA.TOPOLOGY({
-        el: '#vanta-canvas',
-        mouseControls: true,
-        touchControls: true,
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
+      <script type="text/javascript">
+        VANTA.TOPOLOGY({
+          el: '#vanta-canvas',
+          mouseControls: true,
+          touchControls: true,
         gyroControls: false,
         minHeight: 200.0,
         minWidth: 200.0,

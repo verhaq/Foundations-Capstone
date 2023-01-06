@@ -1,16 +1,41 @@
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
+  height: 100vh;
+  width: 100vw;
+}
+*
+{
+  margin: 0;
+  padding: 0;
+}
+li {
+  color: white;
+  text-align: left;
+  margin-left: 30px;
+
+}
+
+#why {
+  background-color: rgb(1, 63, 1);
+  width: 300px;
+  height: 175px;
+  text-align: left;
+  margin: auto;
+  border-radius: 30px;
+  align-content: left;
 }
 h1 {
   text-align: center;
   color: #ddd;
   font-size: 35px;
+  padding: 20px;
 }
 
 p {
   color: white;
   text-align: center;
   font-size: larger;
+  padding: 20px;
 }
 
 #animalContainer {
@@ -24,15 +49,16 @@ p {
   grid-template-rows: repeat(5, 100px); */
 }
 .animalImg {
-  width: 300px;
-  height: 300px;
+  width: 305px;
+  height: 305px;
+  margin-left: 5px;
 }
 #randomAnimalBtn {
   border-radius: 20px;
   padding: 20px;
   background-color: #4caf50;
   color: black;
-  margin-left: 75vh;
+  margin-left: 80vh;
   cursor: pointer;
 }
 

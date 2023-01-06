@@ -36,12 +36,12 @@ async function initMap() {
 
   var map = new google.maps.Map(document.getElementById('map'), options)
 
-  new google.maps.Marker({
-    position: houston,
-    map: map,
-    draggable: true,
-    animation: google.maps.Animation.DROP
-  })
+  // new google.maps.Marker({
+  //   position: houston,
+  //   map: map,
+  //   draggable: true,
+  //   animation: google.maps.Animation.DROP
+  // })
   var markers = []
   openLoading()
   const dbMarker = await getAllDbMarkers()
